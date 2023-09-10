@@ -48,6 +48,16 @@ my_input.grid(column=3, row=2)
 newer_button = tkinter.Button(text="new button")
 newer_button.grid(column=2, row=0)
 
+# can also use Canvas to layer items on top of each other
+# highlightthickness will create or remove the line around the border of canvas bounds
+canvas = tkinter.Canvas(width=220, height=224, background="blue", highlightthickness=0)
+# to add an image in must make an object called PhotoImage to store the filepath in
+image_img = tkinter.PhotoImage(file="image.png")
 
+# numbers are x and y of pixels kind of have to eyeball it in tkinter based on knowing your image's dimensions
+# then take the above object and have image=image_object
+canvas.create_image(110, 112, image=image_img)
 
+# to add a text on it need to also eyeball where to plac x and y, fill= text color
+canvas.create_text(110, 140, text="00:00", fill="white")
 window.mainloop()
