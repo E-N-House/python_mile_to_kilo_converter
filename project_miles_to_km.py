@@ -6,7 +6,7 @@ def start_calculation():
     # obtain user input validates this is a number
     try:
         miles = float(miles_input.get())
-        result = 1.609*miles
+        result = round(1.609*miles, 2)
         calculation.config(text=result)
     except(ValueError):
         # clears entry and replaces with prompt enter a number
