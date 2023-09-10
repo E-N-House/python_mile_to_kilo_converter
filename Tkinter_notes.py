@@ -16,7 +16,7 @@ label_one = tkinter.Label(text="Label One", font=("Arial", 20, "bold"))
 # .pack() will display component on screen and center it by default
 # can also tell it expand=True and it will fit to fill
 # label_one.pack(side="bottom") ===> this will set the component to appear at bottom of screen
-label_one.pack()
+label_one.grid(column=0, row=0)
 
 # can update and change propreties later on via dict key access
 label_one["bg"] = "red"
@@ -39,13 +39,15 @@ def button_click():
 # command= takes in a function WITHOUT () and will activate on button press
 my_button = tkinter.Button(text="Button", command=button_click)
 # don't forget .pack to get it to appear on screen
-my_button.pack()
+my_button.grid(column=1, row=1)
 
 # Entry similiar to input will allow for user prompt
 my_input = tkinter.Entry(width=20)
-my_input.pack()
-user_entry = my_input.get()
-print(user_entry)
+my_input.grid(column=3, row=2)
+
+newer_button = tkinter.Button(text="new button")
+newer_button.grid(column=2, row=0)
+
 
 
 window.mainloop()
